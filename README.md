@@ -78,7 +78,9 @@ Verify that the new database was created.
 $ ls databases
 $ file.csv my-data.db3 my-encrypted.db3 my-decrypted.db
 ```
+# Feedback
 
+Please direct all feedback to [lgili/sqlite-sqlcipher-docker](https://github.com/lgili/sqlite-sqlcipher-docker/issues).
 
 
 
