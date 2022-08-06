@@ -73,4 +73,4 @@ def pushImages():
         print("=" * 100)
 
 buildImages()
-# pushImages()
+pushImages()
