@@ -1,6 +1,7 @@
 # Project files.
 .vscode/
 .idea/
+.env
 
 # macOS files.
 .DS_Store

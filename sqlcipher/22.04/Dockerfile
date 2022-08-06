@@ -13,9 +13,7 @@ RUN apt update; \
     apt autoremove -y; \
     rm -rf ~/bld ~/sqlcipher
 
-# ENTRYPOINT ["sqlcipher"]
-# CMD ["--help"]
 
 WORKDIR sqlcipher
-# RUN pacman -Sy sqlcipher --noconfirm
+
 COPY scripts/* /usr/local/bin/

@@ -1,7 +1,7 @@
 # About This Image
 
 Easy Encrypt and Decrypt [SQLite](https://www.sqlite.org) databases with [SQLCipher](https://www.zetetic.net/sqlcipher).
-Based on [pallocchi/docker](https://github.com/pallocchi/docker/issues).
+Based on [pallocchi/docker](https://github.com/pallocchi/docker).
 
 # How to Use this Image
 
