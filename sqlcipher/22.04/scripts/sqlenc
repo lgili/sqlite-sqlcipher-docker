@@ -20,8 +20,8 @@ if test -f "$ENCRYPTED_DB"; then
     exit 1
 fi
 
-SCRIPT="ATTACH DATABASE '$ENCRYPTED_DB' AS encrypted KEY '$ENCRYPTION_KEY';"
-SCRIPT+="SELECT sqlcipher_export('encrypted');"
-SCRIPT+="DETACH DATABASE encrypted;"
-
-echo $SCRIPT | sqlcipher $PLAIN_DB
+sqlcipher ${PLAIN_DB} <<EOF
+ATTACH DATABASE '$ENCRYPTED_DB' AS encrypted KEY '$ENCRYPTION_KEY';
+SELECT sqlcipher_export('encrypted');
+DETACH DATABASE encrypted;
+EOF

@@ -20,10 +20,8 @@ if test -f "$PLAIN_DB"; then
     exit 1
 fi
 
-SCRIPT=".mode csv"
-# SCRIPT+="ATTACH DATABASE '${PLAIN_DB}' AS decrypted KEY '';"
-# SCRIPT+="SELECT sqlcipher_export('decrypted');"
-# SCRIPT+="DETACH DATABASE decrypted;"
 
-# echo $SCRIPT | sqlcipher $ENCRYPTED_DB
-echo  sqlcipher  
+sqlcipher ${PLAIN_DB} <<EOF
+.mode csv ;
+.import '${CSV_FILE}' '${TABLE_NAME}'
+EOF
