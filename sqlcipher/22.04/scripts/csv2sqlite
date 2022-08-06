@@ -1,0 +1,29 @@
+#!/bin/sh
+
+if [ "$#" -ne 3 ]; then
+    echo "Convert csv to sqlite."
+    echo "Usage: sqldec <file.csv> <plain-db> <table-name>"
+    exit 1
+fi
+
+CSV_FILE=$1
+PLAIN_DB=$2
+TABLE_NAME=$3
+
+if test ! -f "$CSV_FILE"; then
+    echo "File $CSV_FILE does not exist"
+    exit 1
+fi
+
+if test -f "$PLAIN_DB"; then
+    echo "File $PLAIN_DB already exists"
+    exit 1
+fi
+
+SCRIPT=".mode csv"
+# SCRIPT+="ATTACH DATABASE '${PLAIN_DB}' AS decrypted KEY '';"
+# SCRIPT+="SELECT sqlcipher_export('decrypted');"
+# SCRIPT+="DETACH DATABASE decrypted;"
+
+# echo $SCRIPT | sqlcipher $ENCRYPTED_DB
+echo  sqlcipher  

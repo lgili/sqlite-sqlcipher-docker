@@ -1,0 +1,6 @@
+# Project files.
+.vscode/
+.idea/
+
+# macOS files.
+.DS_Store
